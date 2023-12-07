@@ -21,5 +21,5 @@ runs:
       shell: bash
     - run: hello.sh
       shell: bash
-    - run: ls -l
+    - run: read_catalog.sh
       shell: bash
