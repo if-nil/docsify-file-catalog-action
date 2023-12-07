@@ -5,6 +5,9 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  github_token:
+    description: 'github_token'
+    required: true
 outputs:
   random-number:
     description: "Random number"
@@ -28,8 +31,9 @@ runs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git commit -a -m "Add changes"
+      shell: bash
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ github_token }}
         branch: ${{ github.ref }}
