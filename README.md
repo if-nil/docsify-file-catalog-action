@@ -1,7 +1,7 @@
 # docsify-file-catalog-action
 
 
-This repository is a github action, which is used to generate a `_sidebar.md` file based on the repository's file directory, which can be used to display a sidebar in [Docsify](https://docsify.js.org).
+This repository is a github action, which is used to generate a `_sidebar.md` file based on the repository's file directory, which can be used to display a sidebar in [Docsify](https://docsify.js.org) with [docsify-sidebar-collapse](https://github.com/iPeng6/docsify-sidebar-collapse) plugin.
 
 _This Action will use the `GITHUB_TOKEN` to add a pull commit, so the `GITHUB_TOKEN` requires write access, which can be set in the repository's setting_
 
