@@ -8,7 +8,9 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ./read_catalog.sh > _sidebar.md
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
+    - run: read_catalog.sh > _sidebar.md
       shell: bash
     - name: Commit files
       run: |
