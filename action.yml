@@ -1,29 +1,13 @@
 name: 'Generate _sidebar.md'
 description: 'generate _sidebar.md to show the file catalog'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
   github_token:
     description: 'github_token'
     required: true
 outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
-    - id: random-number-generator
-      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
-      shell: bash
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash
-    - run: hello.sh
-      shell: bash
     - run: read_catalog.sh > _sidebar.md
       shell: bash
     - name: Commit files
