@@ -19,9 +19,9 @@ runs:
         git add _sidebar.md
         status=$(git status --porcelain)
         if [ -z "$status" ]; then
-          git commit -m "Add changes"
-        else
           echo "There are changes"
+        else
+          git commit -m "Add changes"
         fi
       shell: bash
     - name: Push changes
