@@ -1,5 +1,5 @@
-name: 'Hello World'
-description: 'Greet someone'
+name: 'Generate _sidebar.md'
+description: 'generate _sidebar.md to show the file catalog'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
@@ -20,4 +20,6 @@ runs:
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
     - run: hello.sh
+      shell: bash
+    - run: ls -l
       shell: bash
