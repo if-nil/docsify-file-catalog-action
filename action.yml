@@ -8,7 +8,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: read_catalog.sh > _sidebar.md
+    - run: ./read_catalog.sh > _sidebar.md
       shell: bash
     - name: Commit files
       run: |
