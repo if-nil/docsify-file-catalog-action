@@ -9,7 +9,8 @@ function print_indent() {
     done
 }
 
-function read_dir(){
+function read_dir() {
+    include=$2
     for file in `ls $1 | sort -d`
     do
         if [ -d $1"/"$file ]
@@ -17,12 +18,11 @@ function read_dir(){
             print_indent
             echo "- $file"
             indent=$((indent+1))
-            read_dir $1"/"$file
+            read_dir $1"/"$file $include
             indent=$((indent-1))
         else
-            if [[ $file == *.md ]]
+            if [[ $file =~ $include ]]
             then
-                filename=${file%.md}
                 print_indent
                 echo "- [$file]($1/$file)"
             fi
@@ -30,4 +30,4 @@ function read_dir(){
     done
 }
 
-read_dir .
+read_dir $1 $2

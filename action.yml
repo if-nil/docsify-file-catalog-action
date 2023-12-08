@@ -4,13 +4,16 @@ inputs:
   github_token:
     description: 'github_token'
     required: true
+  include:
+    description: 'Included files(regular expression)'
+    default: '*.md'
 # outputs:
 runs:
   using: "composite"
   steps:
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
-    - run: read_catalog.sh > _sidebar.md
+    - run: read_catalog.sh . ${{ inputs.include }} > _sidebar.md
       shell: bash
     - name: Commit files
       run: |
