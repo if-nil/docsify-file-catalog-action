@@ -6,7 +6,7 @@ inputs:
     required: true
   include:
     description: 'Included files(regular expression)'
-    default: '*.md'
+    default: '.*\.md'
 # outputs:
 runs:
   using: "composite"
