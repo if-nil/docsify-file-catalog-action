@@ -21,8 +21,13 @@ jobs:
       - uses: if-nil/docsify-file-catalog-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # include: '.*'
 ```
-_`GITHUB_TOKEN` requires write access, which can be set in the repository's setting_
+
+| param | description | required | default |
+| --- | --- | --- | --- |
+| github_token | Used to add `_sidebar.md` to the repository, requires write access ｜ true | null |
+| include | Files what you want the directory to contain. Use regular expressions. | false | `.*\.md` |
 
 ## Example
 
