@@ -24,7 +24,7 @@ jobs:
           # include: '.*'
 ```
 
-| param | description | required | default |
+| inputs | description | required | default |
 | --- | --- | --- | --- |
 | github_token | Used to add `_sidebar.md` to the repository, requires write access. | true | null |
 | include | Files what you want the directory to contain. Use regular expressions. | false | `.*\.md` |
