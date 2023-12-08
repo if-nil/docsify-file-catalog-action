@@ -1,5 +1,7 @@
 name: 'Generate _sidebar.md'
 description: 'generate _sidebar.md to show the file catalog'
+icon: activity
+color: green
 inputs:
   github_token:
     description: 'github_token'
